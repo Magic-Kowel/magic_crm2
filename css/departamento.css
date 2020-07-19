@@ -1,0 +1,38 @@
+:root{
+    --bgcolor:#2FACB2;
+    --colorBackgraund:#ffffffff;
+    --without-color: none;
+}
+/*#app #formulario{
+    background-color: #7FECF2;
+    width: 30%;
+    float: right;
+
+}
+.textbox{
+    width: 80%;
+}
+
+#formulario form #textbox-descripcion{
+    height:400px;
+    
+}
+*/
+.button{
+    border :none ;
+    background-color:  var(--bgcolor);
+}
+
+.button i{
+    color: white;
+}
+#forLook-Text{
+    width: 60%;
+}
+#button-search{
+    border :none ;
+    background-color: var(--without-color);
+}
+#button-search i{
+    color:var(--bgcolor);
+}
