@@ -13,8 +13,8 @@
             <ul>
                 <li class='last'><a href='http://localhost/magic_crm2/datosPersona/'><span>Personas</span></a></li>
                 <li class='last'><a href='http://localhost/magic_crm2/usuarios/'><span>Usuarios</span></a></li>
-                <li class='last'><a href='http://localhost/magic_crm2/informacionPersona/'><span>Personal</span></a>
-                </li>
+                <li class='last'><a href='http://localhost/magic_crm2/informacionPersona/'><span>Personal</span></a></li>
+                <li class='last'><a href='http://localhost/magic_crm2/canalizacion/'><span>Canalizacion</span></a></li>
             </ul>
         </li>
         <li class='active has-sub'><a href='#'><span>Atencion</span></a>
@@ -27,10 +27,13 @@
                                     Reporte</span></a></li>
                     </ul>
                 </li>
+                <li class='last'><a href='http://localhost/magic_crm2/atencion/'><span>Ver
+                                    Atencion</span></a></li>
             </ul>
         </li>
 
         <li><a href='http://localhost/magic_crm2/principal/'><span>Home</span></a></li>
+        <li><a href='#'><span><?php echo  $_SESSION['user'] ;?></span></a></li>
 
     </ul>
 </div>

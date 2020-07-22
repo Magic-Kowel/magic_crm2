@@ -5,29 +5,29 @@
     <?php include_once ('../includes/bara_busqueda.php')?>
 
     <main id="app" class="container">
-    <h1> <span class="label label-default">Lista de Reportes</span></h1>
-    <div class="input-group mb-3">
+
+        <div class="input-group mb-3">
             <input class="form-control" type="search" v-model="buscar" placeholder="buscar" required>
             <div class="input-group-append">
-                <span id="button-search" class="input-group-text"></span>
+                <span id="button-search" class="input-group-text"><i class="fas fa-search"></i></span>
             </div>
         </div>
         <table id="table" class="table table-bordered">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Descripcion Reporte</th>
+                    <th>Estado</th>
+                    <th>Tiempo de Atencion</th>
+                    <th>Descripcion</th>
                     <th>Numero de Contrato</th>
-                    <th>Hilo conbersasion</th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="item in datosFiltrados">
-                    <td>{{item.Cod_repo}}</td>
-                    <td> {{item.Detalle_repo}}</td>
+                    <td v-if="item.Estado_Ate ==1"><button @click="actualizarEstado(item.Cod_ate , item.Estado_ate)" class="btn btn-success"> <i class="fas fa-toggle-on"></i></button></td>
+                    <td v-if="item.Estado_Ate ==0"><button @click="actualizarEstado(item.Cod_ate , item.Estado_ate)" class="btn btn-danger"><i class="fas fa-toggle-off"></i></button></td>
+                    <td> {{item.Tiempo_ate}}</td>
+                    <td>{{item.Detalle_repo}}</td>
                     <td>{{item.Contrato_repo}}</td>
-                    <td><a class="btn btn-success " role="button" aria-pressed="true"
-                            :href="'/magic_crm2/mensajes/index.php?id=' + item.Cod_repo"><i class="fas fa-comment-dots"></i></a></td>
                 </tr>
             </tbody>
         </table>
@@ -35,7 +35,7 @@
     </main>
     <?php include '../includes/librerias.php' ?>
 
-    <script src="../js/appReporte.js"></script>
+    <script src="../js/appAtencion.js"></script>
 
 </body>
 

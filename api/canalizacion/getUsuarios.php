@@ -4,7 +4,7 @@ include '../conexion.php';
 $temporal = array();
 $resultado = array();
 
-$sel = $con->query("SELECT * FROM `reportes`  ORDER BY `Cod_repo` DESC");
+$sel = $con->query("SELECT `Cod_usr`,`Nickname_usr` FROM `usuarios`");
 
 while ($f = $sel->fetch_assoc()) {
     $temporal = $f;
@@ -17,4 +17,3 @@ $sel->close();
 $con->close();
 
 ?>
-
