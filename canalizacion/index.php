@@ -14,14 +14,6 @@
                         {{itemDepartamento.Nombre_dep}}</option>
                 </select>
             </div>
-            
-            <div class="form-group btn-lg col-md-6">
-                <label>Usuarios</label>
-                <select class="form-control" name="idUsuarios">
-                    <option v-for="itemUsuario in listarUsuarios" v-bind:value="itemUsuario.Cod_usr">
-                        {{itemUsuario.Nickname_usr}}</option>
-                </select>
-            </div>
             <div class="form-group">
                 <button type="submit" class="btn  btn-lg col-md-6 btn-lg" data-toggle="tooltip" title="Agregar"
                     style="background-color: #2FACB2">
@@ -40,19 +32,14 @@
                 <tr>
                     <th>Nombre</th>
                     <th>Departamento</th>
-                    <th>Eliminar</th>
-                    <th>Editar</th>
+                    <th>Captura</th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="item in datosFiltrados">
                     <td>{{item.Nickname_usr}}</td>
                     <td> {{item.Nombre_dep}}</td>
-                    <td><button class="btn btn-danger" @click="eliminar(item.Cod_can)"><i
-                                class="fas fa-trash-alt"></i></button></td>
-                    <td><a class="btn btn-warning " role="button" aria-pressed="true"
-                            :href="'/magic_crm2/canalizacion/editarCanalizacion.php?id=' + item.Cod_can"><i
-                                class="fas fa-edit"></i></a></td>
+                    <td> {{item.captura}}</td>
                 </tr>
             </tbody>
         </table>

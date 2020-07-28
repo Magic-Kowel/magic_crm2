@@ -7,11 +7,11 @@
     <h1> <span class="label label-default">Hilo Reporte {{formEditar.Cod_repo}}</span></h1>
     <form id="formRegistro" class="form-group container" autocomplete="off" @submit.prevent="registro"
             enctype="multipart/form-data">
-         <!--   <div class="form-group  ">
+            <div class="form-group  ">
                 <label>Mesaje</label>
                 <textarea disabled  :value="formEditar.Detalle_repo"   type="text" class="form-control" name="mesage" placeholder="Mesaje" require></textarea disabled>
             </div>
-            -->
+            
             <div class="form-group  ">
                 <label>Comentario</label>
                 <textarea type="text" class="form-control" name="Comentario" placeholder="Escribe Comentario" require></textarea>

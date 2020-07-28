@@ -1,0 +1,8 @@
+1
+
+         delimiter //
+            create trigger MiTabla_BU after insert on reportes
+            for each row
+                begin
+                    insert into atencion (Cod_fk_repo1,Tiempo_ate) values(NEW.Cod_repo, NEW.captura_repo);
+    end//

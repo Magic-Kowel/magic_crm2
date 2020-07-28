@@ -26,6 +26,7 @@
             <button type="submit" class="btn btn-warning container" data-toggle="tooltip" title="Editar"><i
                     class="fas fa-edit"></i></button>
             </div>
+            </form>
     </main>
     <?php include '../includes/librerias.php' ?>
     

@@ -72,7 +72,7 @@ const app = new Vue({
         getDatosPersona() {
             let uri = window.location.href.split('?');
 
-            axios.get('http://localhost/magic_crm2/api/datosPersona/getDatosPersoa.php')
+            axios.get('http://localhost/magic_crm2/api/informacionPersona/getDatosPersoa.php')
                 .then(res => {
                     this.listarPersona = res.data
                 })

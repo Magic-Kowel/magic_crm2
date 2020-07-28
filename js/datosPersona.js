@@ -26,8 +26,20 @@ const app = new Vue({
             axios.post('../api/datosPersona/addPersona.php', new FormData(form))
                 .then(res => {
                     this.respuesta = res.data
-                    swal("Registro echo");
-                    this.getDatosPersoa();
+                    if (res.data == 'success') {
+                        swal({
+                            title: 'Guardado',
+                            text: 'Persona Añadida',
+                            icon: 'success'
+                        })
+                        this.getDatosPersoa();
+                    } else {
+                        swal({
+                            title: 'Error',
+                            text: 'Nombre y coreo pueden estar ya registrados'+this.respuesta,
+                            icon: 'error'
+                        })
+                    }
                 })
         },
         getDatosPersoa() {

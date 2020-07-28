@@ -14,7 +14,6 @@
                 <li class='last'><a href='http://localhost/magic_crm2/datosPersona/'><span>Personas</span></a></li>
                 <li class='last'><a href='http://localhost/magic_crm2/usuarios/'><span>Usuarios</span></a></li>
                 <li class='last'><a href='http://localhost/magic_crm2/informacionPersona/'><span>Personal</span></a></li>
-                <li class='last'><a href='http://localhost/magic_crm2/canalizacion/'><span>Canalizacion</span></a></li>
             </ul>
         </li>
         <li class='active has-sub'><a href='#'><span>Atencion</span></a>
@@ -29,6 +28,8 @@
                 </li>
                 <li class='last'><a href='http://localhost/magic_crm2/atencion/'><span>Ver
                                     Atencion</span></a></li>
+                <li class='last'><a href='http://localhost/magic_crm2/cuestionarios/'><span>
+                                    Cuestionario</span></a></li>
             </ul>
         </li>
 
