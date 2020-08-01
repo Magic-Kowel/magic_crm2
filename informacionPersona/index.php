@@ -10,7 +10,7 @@
             enctype="multipart/form-data">
             <div class="form-group btn-lg col-md-6">
                 <label>Puestos</label>
-                <select class="form-control" name="idPuesto" :value="formEditar.Nombre_pues">
+                <select class="form-control" name="idPuesto" :value="formEditar.Nombre_pues" require>
                     <option v-for="itemPuestos in listarPuestos" v-bind:value="itemPuestos.Cod_pues">
                         {{itemPuestos.Nombre_pues}}</option>
                 </select>

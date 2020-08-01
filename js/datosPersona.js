@@ -108,7 +108,6 @@ const app = new Vue({
                             icon: 'success',
                             timer: 3000
                         })
-                        this.getDatosPersoa()
                         .then(() => {
                             location.href = 'index.php'
                         })

@@ -9,7 +9,8 @@ const app = new Vue({
         itemIdPregunta:'',
         formCuestionario: {},
         formEditar:{},
-        userPost: ''
+        identificadorPregunta:{},
+        estado:1
     },
     created() {
         this.getId()
@@ -25,6 +26,13 @@ const app = new Vue({
         }
     },
     methods: {
+        cambiarEstado(){
+            if(this.estado==1){
+                this.estado=0;
+            }else{
+                this.estado=1;
+            }
+        },
         registro(id) {
             const form = document.getElementById('formRegistro')
             axios.post('../api/preguntas/addPreguntas.php', new FormData(form))
@@ -82,6 +90,7 @@ const app = new Vue({
                                     })
                                 }
                             })
+                            this.getPreguntas(this.itemId.id)
                     } else {
                         return false
                     }
@@ -149,7 +158,11 @@ const app = new Vue({
                 axios.get('http://localhost/magic_crm2/api/preguntas/getPreguntas.php?id=' + this.itemId.id)
                     .then(res => {
                         this.formCuestionario  = res.data
-                        console.log(this.formCuestionario[1].Nombre_cuest );
+                    })
+                axios.get('http://localhost/magic_crm2/api/preguntas/getIdentificadorPregunta.php?id=' + this.itemId.id)
+                    .then(res => {
+                        this.identificadorPregunta  = res.data
+                        
                     })
             }
         }

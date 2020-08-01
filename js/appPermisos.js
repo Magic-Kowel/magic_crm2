@@ -28,8 +28,23 @@ const app = new Vue({
                 .then(res => {
                     this.respuesta = res.data
                     //this.direccionamiento()
-                    swal("Registro echo");
-                    this.getPermisos();
+                    if (res.data == 'success') {
+                        swal({
+                            title: 'Registro',
+                            text: 'Registro echo',
+                            icon: 'success',
+                            timer: 3000
+                        })
+                        this.getPermisos();
+                    } else {
+                        swal({
+                            title: 'Registro',
+                            text: res.data,
+                            icon: 'error',
+                            buttons: true
+                        })
+                    }
+
                 })
         },
         direccionamiento() {
@@ -61,10 +76,20 @@ const app = new Vue({
                         axios.get('http://localhost/magic_crm2/api/permisos/eliminarPermisos.php?id=' + id)
                             .then(res => {
                                 if (res.data == 'success') {
-                                    swal('Permiso eliminado')
+                                    swal({
+                                        title: 'Eliminar',
+                                        text: 'Permiso eliminado',
+                                        icon: 'success',
+                                        timer: 3000
+                                    })
                                     this.getPermisos()
                                 } else {
-                                    swal('Permiso no eliminado')
+                                    swal({
+                                        title: 'Eliminar',
+                                        text:'Permiso no eliminado',
+                                        icon: 'error',
+                                        buttons: true
+                                    })
                                 }
                             })
                     } else {

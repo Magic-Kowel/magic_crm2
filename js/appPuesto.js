@@ -28,9 +28,24 @@ const app = new Vue({
             axios.post('../api/puestos/addPuesto.php', new FormData(form))
                 .then(res => {
                     this.respuesta = res.data
-                    swal("Registro echo");
-                    this.getDepartamentos();
-                    this.getPuestos();
+                    if (res.data == 'success') {
+                        swal({
+                            title: 'Registro',
+                            text: 'Registro echo',
+                            icon: 'success',
+                            timer: 3000
+                        })
+                        this.getDepartamentos();
+                        this.getPuestos();
+                    } else {
+                        swal({
+                            title: 'Registro',
+                            text: res.data,
+                            icon: 'error',
+                            buttons: true
+                        })
+                    }
+
                 })
         },
         getDepartamentos() {
@@ -64,10 +79,20 @@ const app = new Vue({
                         axios.get('http://localhost/magic_crm2/api/puestos/eliminarPuestos.php?id=' + id)
                             .then(res => {
                                 if (res.data == 'success') {
-                                    swal('Departamento eliminado')
+                                    swal({
+                                        title: 'Eliminar',
+                                        text: 'Departamento eliminado',
+                                        icon: 'success',
+                                        timer: 3000
+                                    })
                                     this.getPuestos()
                                 } else {
-                                    swal('Departamento no eliminado')
+                                    swal({
+                                        title: 'Eliminar',
+                                        text: 'Departamento no eliminado'+res.data,
+                                        icon: 'error',
+                                        buttons: true
+                                    })
                                 }
                             })
                     } else {
@@ -106,10 +131,10 @@ const app = new Vue({
                             icon: 'success',
                             timer: 3000
                         })
-                        this.getPuestos()
                         .then(() => {
                             location.href = 'index.php'
                         })
+                        
                     } else {
                         swal({
                             title: 'Editar',

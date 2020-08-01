@@ -28,8 +28,24 @@ const app = new Vue({
                 .then(res => {
                     this.respuesta = res.data
                     //this.direccionamiento()
-                    swal("Registro echo");
-                    this.getCategoria();
+                    if (res.data == 'success') {
+                        swal({
+                            title: 'Registro',
+                            text: 'Registro echo',
+                            icon: 'success',
+                            timer: 3000
+                        })
+                        this.getCategoria();
+                    } else {
+                        swal({
+                            title: 'Registro',
+                            text: res.data,
+                            icon: 'error',
+                            buttons: true
+                        })
+                    }
+
+                    
                 })
         },
         direccionamiento() {
@@ -61,10 +77,20 @@ const app = new Vue({
                         axios.get('http://localhost/magic_crm2/api/departamento/eliminarDepartamento.php?id=' + id)
                             .then(res => {
                                 if (res.data == 'success') {
-                                    swal('Departamento eliminado')
+                                    swal({
+                                        title: 'Eliminar',
+                                        text: 'Departamento eliminado',
+                                        icon: 'success',
+                                        timer: 3000
+                                    })
                                     this.getCategoria()
                                 } else {
-                                    swal('Departamento no eliminado')
+                                    swal({
+                                        title: 'Eliminar',
+                                        text:'Departamento no eliminado'+ res.data,
+                                        icon: 'error',
+                                        buttons: true
+                                    })
                                 }
                             })
                     } else {

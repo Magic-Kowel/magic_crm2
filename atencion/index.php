@@ -33,7 +33,7 @@
                     <td><a class="btn btn-success " role="button" aria-pressed="true"
                             :href="'/magic_crm2/mensajes/index.php?id=' + item.Cod_fk_repo1"><i class="fas fa-comment-dots"></i></a></td>
                     <td><a class="btn btn-success " role="button" aria-pressed="true"
-                            :href="'/magic_crm2/canalizacion/index.php?canalizacion=' + item.Cod_fk_repo1"><i class="fas fa-address-book"></i></a></td>
+                            :href="'/magic_crm2/canalizacion/index.php?canalizacion='+ item.Cod_fk_repo1+'&idAtencion='+item.Cod_ate"><i class="fas fa-address-book"></i></a></td>
                 </tr>
             </tbody>
         </table>

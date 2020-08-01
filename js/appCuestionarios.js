@@ -79,6 +79,7 @@ const app = new Vue({
                                     })
                                 }
                             })
+                            this.getCuestionario()
                     } else {
                         return false
                     }

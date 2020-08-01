@@ -28,8 +28,15 @@
                 </li>
                 <li class='last'><a href='http://localhost/magic_crm2/atencion/'><span>Ver
                                     Atencion</span></a></li>
-                <li class='last'><a href='http://localhost/magic_crm2/cuestionarios/'><span>
-                                    Cuestionario</span></a></li>
+                <li class='has-sub'><a href='#'><span>Cuestionarios</span></a>
+                    <ul>
+                        <li class='last'><a href='http://localhost/magic_crm2/cuestionarios/'><span>Generrar
+                        Cuestionario</span></a></li>
+                        <li class='last'><a href='http://localhost/magic_crm2/resultadosCuestionarios/'><span>Ver
+                                    Resultados</span></a></li>
+                    </ul>
+                </li>
+
             </ul>
         </li>
 
