@@ -31,7 +31,7 @@ const app = new Vue({
                     if (res.data == 'success') {
                         swal({
                             title: 'Guardado',
-                            text: 'Usuario añadido',
+                            text: 'Usuario Agregado',
                             icon: 'success'
                         })
                         this.getPermisos()

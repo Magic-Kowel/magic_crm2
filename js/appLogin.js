@@ -18,7 +18,7 @@ const app = new Vue({
                     this.direccionamiento()
                 })
             } else {
-                swal('los password no son iguales')
+                swal('Las contraseñas no coinciden')
             }
         },
         direccionamiento(){
@@ -38,7 +38,7 @@ const app = new Vue({
                     if (res.data == "success") {
                         this.boton = 'btn blue'
                     } else {
-                        swal('El correo electronico ya existe')
+                        swal('El correo electronico ya esta en uso')
                     }
                 })
             } else {

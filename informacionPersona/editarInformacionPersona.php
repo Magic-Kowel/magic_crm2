@@ -3,6 +3,7 @@
 <?php include '../includes/head.php' ?>
 <body>
     <?php include '../includes/sesion.php' ?>
+    <?php include_once ('../includes/permisoAlto.php') ?>
     <?php include_once ('../includes/bara_busqueda.php')?>
     <main id="app" class="container">
         <form class="form-group container" id="editarPersonal" autocomplete="off" @submit.prevent="editar"
@@ -36,6 +37,7 @@
     </main>
     <?php include '../includes/librerias.php' ?>
     <script src="../js/appInformacionPersona.js"></script>
+    <script src="../js/validarNivelUsuario.js"></script>
 </body>
 
 </html>

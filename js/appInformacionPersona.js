@@ -38,7 +38,7 @@ const app = new Vue({
                     if (res.data == 'success') {
                         swal({
                             title: 'Guardado',
-                            text: 'Usuario añadido',
+                            text: 'Usuario Agregado',
                             icon: 'success'
                         })
                         this.getInformacionPersona()
@@ -90,7 +90,7 @@ const app = new Vue({
         eliminar(id) {
             swal({
                     title: 'Eliminar Personal',
-                    text: 'Seguro que deseas eliminar  el Personal',
+                    text: 'Seguro que deseas eliminar el Personal',
                     icon: 'warning',
                     buttons: true,
                     dangerMode: true,

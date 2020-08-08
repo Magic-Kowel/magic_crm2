@@ -31,7 +31,7 @@ const app = new Vue({
                     if (res.data == 'success') {
                         swal({
                             title: 'Registro',
-                            text: 'Registro echo',
+                            text: 'Registro hecho',
                             icon: 'success',
                             timer: 3000
                         })

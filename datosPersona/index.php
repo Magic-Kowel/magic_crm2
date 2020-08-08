@@ -2,6 +2,7 @@
 
 <body>
     <?php include_once ('../includes/sesion.php') ?>
+    <?php include_once ('../includes/permisoAlto.php') ?>
     <?php include_once ('../includes/bara_busqueda.php')?>
     <main id="app" class="container">
 
@@ -20,8 +21,8 @@
                 <input type="text" class="form-control" name="celularPersona" placeholder="Celular" require>
             </div>
             <div class="form-group btn-lg col-md-6">
-                <label>Coreo</label>
-                <input type="email" class="form-control" name="coreoPersona" placeholder="Coreo" require>
+                <label>Correo</label>
+                <input type="email" class="form-control" name="coreoPersona" placeholder="Correo" require>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn  btn-lg col-md-6 btn-lg" data-toggle="tooltip" title="Agregar"
@@ -36,7 +37,8 @@
                 <span id="button-search" class="input-group-text"><i class="fas fa-search"></i></span>
             </div>
         </div>
-        <table id="table" class="table table-bordered">
+        <div class="table-responsive">
+        <table id="table" class="table table-hover table-bordered ">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -63,11 +65,12 @@
                 </tr>
             </tbody>
         </table>
-
+        </div>
     </main>
     <?php include '../includes/librerias.php' ?>
 
     <script src="../js/datosPersona.js"></script>
+    <script src="../js/validarNivelUsuario.js"></script>
 
 </body>
 

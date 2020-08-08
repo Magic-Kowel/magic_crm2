@@ -2,6 +2,7 @@
 
 <body>
     <?php include_once ('../includes/sesion.php') ?>
+    <?php include_once ('../includes/permisoBajo.php') ?>
     <?php include_once ('../includes/bara_busqueda.php')?>
 
     <main id="app" class="container">
@@ -12,13 +13,14 @@
                 <span id="button-search" class="input-group-text"></span>
             </div>
         </div>
-        <table id="table" class="table table-bordered">
+        <div class="table-responsive">
+        <table id="table" class="table table-hover table-bordered ">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Descripcion Reporte</th>
+                    <th>Descripcion del Reporte</th>
                     <th>Numero de Contrato</th>
-                    <th>Hilo conbersasion</th>
+                    <th>Hilo conversación</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,11 +33,12 @@
                 </tr>
             </tbody>
         </table>
-
+        </div>
     </main>
     <?php include '../includes/librerias.php' ?>
 
     <script src="../js/appReporte.js"></script>
+    <script src="../js/validarNivelUsuario.js"></script>
 
 </body>
 

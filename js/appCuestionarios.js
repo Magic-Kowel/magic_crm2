@@ -26,17 +26,17 @@ const app = new Vue({
             const form = document.getElementById('formRegistro')
             axios.post('../api/cuestionario/addCuestionario.php', new FormData(form))
                 .then(res => {
+                    this.respuesta= res.data ;
                     if (res.data == 'success') {
                         swal({
                             title: 'Cuestionario',
-                            text: 'Cuestionari Creado',
+                            text: 'Cuestionario Creado',
                             icon: 'success'
                         })
-                        this.getCuestionario()
                     } else {
                         swal({
                             title: 'Error',
-                            text:'Cuestionari no Creado'+ this.respuesta,
+                            text:'Cuestionario no Creado, '+ this.respuesta,
                             icon: 'error'
                         })
                     }

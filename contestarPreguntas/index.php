@@ -31,5 +31,4 @@
     <?php include '../includes/librerias.php' ?>
     <script src="../js/appContestarPregunta.js"></script>
 </body>
-
 </html>

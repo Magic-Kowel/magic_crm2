@@ -33,7 +33,7 @@ const app = new Vue({
         actualizarEstado (id,estado) {
             swal({
                     title: 'Actualizar ',
-                    text: 'Seguro Que Quieres Cambiarlo',
+                    text: '¿Seguro que quieres cambiarlo?',
                     icon: 'warning',
                     buttons: true,
                     dangerMode: true,

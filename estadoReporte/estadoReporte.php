@@ -9,7 +9,8 @@
                 <span id="button-search" class="input-group-text"><i class="fas fa-search"></i></span>
             </div>
         </div>
-        <table id="table" class="table table-bordered">
+        <div class="table-responsive">
+        <table id="table" class="  table  table-hover table-bordered ">
             <thead>
                 <tr>
                     <th>Estado</th>
@@ -28,11 +29,12 @@
                 </tr>
             </tbody>
         </table>
-
+        </div>
     </main>
     <?php include '../includes/librerias.php' ?>
 
     <script src="../js/appCanalizacion.js"></script>
+    <script src="../js/validarNivelUsuario.js"></script>
 
 </body>
 

@@ -88,7 +88,6 @@ const app = new Vue({
                             text: 'Opcion Creada',
                             icon: 'success'
                         })
-                        this.getOpciones(idPregunta)
                     } else {
                         swal({
                             title: 'Error',
@@ -97,6 +96,7 @@ const app = new Vue({
                         })
                     }
                 })
+                this.getOpciones(this.idPregunta)
         },
         eliminar(id) {
             swal({
@@ -155,5 +155,6 @@ const app = new Vue({
                     }
                 })
         }
+
     }
 })

@@ -2,7 +2,7 @@
 
 <body>
     <main id="app" class="container">
-    <h1> <span class="label label-default">Generrar Reporte</span></h1>
+    <h1> <span class="label label-default">Generar Reporte</span></h1>
     <form id="formRegistro" class="form-group container" autocomplete="off" @submit.prevent="registro"
             enctype="multipart/form-data">
             <div class="form-group  ">
@@ -25,6 +25,7 @@
     <?php include '../includes/librerias.php' ?>
 
     <script src="../js/appReporte.js"></script>
+    <script src="../js/validarNivelUsuario.js"></script>
 
 </body>
 

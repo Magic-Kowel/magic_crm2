@@ -6,7 +6,8 @@
         <h1>
             <center><span class="label label-default"> </span></center>
         </h1>
-            <table id="table" class="table table-bordered">
+        <div class="table-responsive">
+        <table id="table" class="  table  table-hover table-bordered ">
                 <thead>
                     <tr>
                         <th>Opciones</th>
@@ -25,10 +26,12 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
     </main>
     <?php include '../includes/librerias.php' ?>
 
     <script src="../js/appContestarPregunta.js"></script>
+    <script src="../js/validarNivelUsuario.js"></script>
 
 </body>
 

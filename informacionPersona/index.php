@@ -2,6 +2,7 @@
 
 <body>
     <?php include_once ('../includes/sesion.php') ?>
+    <?php include_once ('../includes/permisoAlto.php') ?>
     <?php include_once ('../includes/bara_busqueda.php')?>
 
     <main id="app" class="container">
@@ -37,12 +38,13 @@
             </div>
         </form>
         <div class="input-group mb-3">
-            <input class="form-control" type="search" v-model="buscar" placeholder="buscar" required>
+            <input class="form-control" type="search" v-model="buscar" placeholder="Buscar" required>
             <div class="input-group-append">
                 <span id="button-search" class="input-group-text"><i class="fas fa-search"></i></span>
             </div>
         </div>
-        <table id="table" class="table table-bordered">
+        <div class="table-responsive">
+        <table id="table" class="table table-hover table-bordered ">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -75,11 +77,12 @@
                 </tr>
             </tbody>
         </table>
-
+        </div>
     </main>
     <?php include '../includes/librerias.php' ?>
 
     <script src="../js/appInformacionPersona.js"></script>
+    <script src="../js/validarNivelUsuario.js"></script>
 
 </body>
 

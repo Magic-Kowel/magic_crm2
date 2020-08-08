@@ -2,9 +2,10 @@
 
 <body>
     <?php include_once ('../includes/sesion.php') ?>
+    <?php include_once ('../includes/permisoBajo.php') ?>
     <?php include_once ('../includes/bara_busqueda.php')?>
     <main id="app" class="container">
-    <h1> <span class="label label-default">Hilo Reporte {{formEditar.Cod_repo}}</span></h1>
+    <h1> <span class="label label-default">Hilo del reporte {{formEditar.Cod_repo}}</span></h1>
     <form id="formRegistro" class="form-group container" autocomplete="off" @submit.prevent="registro"
             enctype="multipart/form-data">
             <div class="form-group  ">
@@ -24,7 +25,8 @@
                 </button>
             </div>
         </form>
-        <table id="table" class="table table-bordered">
+        <div class="table-responsive">
+        <table id="table" class="  table table-responsive table-hover table-bordered ">
             <thead>
                 <tr>
                     <th>Hilo</th>
@@ -39,12 +41,12 @@
                 </tr>
             </tbody>
         </table>
-
-        
+        </div>
     </main>
     <?php include '../includes/librerias.php' ?>
 
     <script src="../js/mensajes.js"></script>
+    <script src="../js/validarNivelUsuario.js"></script>
 
 </body>
 

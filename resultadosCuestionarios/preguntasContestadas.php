@@ -2,6 +2,7 @@
 
 <body>
     <?php include_once ('../includes/sesion.php') ?>
+    <?php include_once ('../includes/permisoMedio.php') ?>
     <?php include_once ('../includes/bara_busqueda.php')?>
     <main id="app" class="container">
     <h1><center><span class="label label-default">{{identificadorPregunta.Nombre_cuest}}</span></center></h1>
@@ -11,7 +12,7 @@
                 <span id="button-search" class="input-group-text"><i class="fas fa-search"></i></span>
             </div>
         </div>
-        <table id="table" class="table table-bordered">
+        <table id="table" class="  table table-responsive table-hover table-bordered ">
             <thead>
                 <tr>
                     <th>Preguntas</th>
@@ -32,6 +33,7 @@
     <?php include '../includes/librerias.php' ?>
 
     <script src="../js/appPreguntas.js"></script>
+    <script src="../js/validarNivelUsuario.js"></script>
 
 </body>
 

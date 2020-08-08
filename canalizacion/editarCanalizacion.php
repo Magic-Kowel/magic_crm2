@@ -31,6 +31,7 @@
     <?php include '../includes/librerias.php' ?>
     
     <script src="../js/appCanalizacion.js"></script>
+    <script src="../js/validarNivelUsuario.js"></script>
 </body>
 
 </html>

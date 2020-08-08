@@ -4,7 +4,7 @@ include '../conexion.php';
 foreach ($_POST as $campo => $valor) {
     $var = "$".$campo."='". $valor."';";
     eval($var);
- }
+}
 
 //if (isset($_POST['save_task'])) {
 $sql="SELECT Nombre_perm FROM `permisos` where Nombre_perm='$permiso'";
@@ -16,11 +16,11 @@ if($rows > 0) {
   $query = "INSERT INTO `permisos`(`Nombre_perm`, `Descrpcion_perm`) VALUES ('$permiso', '$descripcionPermiso')";
   $result = mysqli_query($con, $query);
   if ($result) {
-    echo "success";
+    echo trim("success");
   }else {
     echo "fail";
   }
 }
 //}
-
+$con->close();
 ?>

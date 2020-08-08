@@ -2,6 +2,7 @@
 
 <body>
     <?php include_once ('../includes/sesion.php') ?>
+    <?php include_once ('../includes/permisoAlto.php') ?>
     <?php include_once ('../includes/bara_busqueda.php')?>
     <main id="app" class="container">
         <form id="formRegistro" class="form-group container" autocomplete="off" @submit.prevent="registro"
@@ -36,7 +37,8 @@
                 <span id="button-search" class="input-group-text"><i class="fas fa-search"></i></span>
             </div>
         </div>
-        <table id="table" class="table table-bordered">
+        <div class="table-responsive">
+        <table id="table" class="table table-hover table-bordered ">
             <thead>
                 <tr>
                     <th>Departamento</th>
@@ -59,11 +61,12 @@
                 </tr>
             </tbody>
         </table>
-
+        </div>
     </main>
     <?php include '../includes/librerias.php' ?>
 
     <script src="../js/appPuesto.js"></script>
+    <script src="../js/validarNivelUsuario.js"></script>
 
 </body>
 

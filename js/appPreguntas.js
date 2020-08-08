@@ -29,8 +29,18 @@ const app = new Vue({
         cambiarEstado(){
             if(this.estado==1){
                 this.estado=0;
+                swal({
+                    title: 'Pregunta cerrada',
+                    text:'No Podras Añadir Opciones',
+                    icon: 'info'
+                })
             }else{
                 this.estado=1;
+                swal({
+                    title: 'Pregunta abierta',
+                    text:'Podras Añadir Opciones',
+                    icon: 'info'
+                })
             }
         },
         registro(id) {

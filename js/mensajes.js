@@ -25,7 +25,7 @@ const app = new Vue({
                     if (res.data == 'success') {
                         swal({
                                 title: 'Editar',
-                                text: 'Mensaje añadido',
+                                text: 'Mensaje Agregado',
                                 icon: 'success',
                             })
                             .then(() => {

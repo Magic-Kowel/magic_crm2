@@ -12,7 +12,8 @@ $sql = "SELECT Nickname_usr FROM `usuarios` where Nickname_usr='$nombreUsuario'"
     if($rows > 0) {
         echo 'Usuario ya existe';
     } else {
-        $query = "INSERT INTO `usuarios`( `Cod_fk_perm`, `Nickname_usr`, `Clave_usr`) VALUES ('$idPermiso', '$nombreUsuario','$claveUsiario')";
+        $passEncriptada = password_hash($claveUsiario, PASSWORD_BCRYPT);
+        $query = "INSERT INTO `usuarios`( `Cod_fk_perm`, `Nickname_usr`, `Clave_usr`) VALUES ('$idPermiso', '$nombreUsuario','$passEncriptada')";
         $result = mysqli_query($con, $query);
         
         if ($result) {

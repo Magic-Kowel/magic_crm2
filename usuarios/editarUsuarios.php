@@ -1,11 +1,11 @@
 <?php include '../includes/head.php' ?>
 <body>
     <?php include '../includes/sesion.php' ?>
+    <?php include_once ('../includes/permisoAlto.php') ?>
     <?php include_once ('../includes/bara_busqueda.php')?>
     <main id="app" class="container">
         <form class="form-group container" id="editarUsuarios" autocomplete="off" @submit.prevent="editar"
             enctype="multipart/form-data">
-            
             <div class="form-group btn-lg col-md-6">
                 <label>Permiso</label>
                 <select name="idPermiso" :value="formEditar.Cod_perm" class="form-control" >
@@ -31,6 +31,7 @@
     </main>
     <?php include '../includes/librerias.php' ?>
     <script src="../js/appUsuarios.js"></script>
+    <script src="../js/validarNivelUsuario.js"></script>
 </body>
 
 </html>

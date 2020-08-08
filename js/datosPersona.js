@@ -29,22 +29,20 @@ const app = new Vue({
                     if (res.data == 'success') {
                         swal({
                             title: 'Guardado',
-                            text: 'Persona Añadida',
+                            text: 'Persona Agregada',
                             icon: 'success'
                         })
                         this.getDatosPersoa();
                     } else {
                         swal({
                             title: 'Error',
-                            text: 'Nombre y coreo pueden estar ya registrados'+this.respuesta,
+                            text: 'Error :'+this.respuesta,
                             icon: 'error'
                         })
                     }
                 })
         },
         getDatosPersoa() {
-            let uri = window.location.href.split('?');
-
             axios.get('http://localhost/magic_crm2/api/datosPersona/getDatosPersoa.php')
                 .then(res => {
                     this.listar= res.data
@@ -54,7 +52,7 @@ const app = new Vue({
         eliminar(id) {
             swal({
                     title: 'Eliminar Persona',
-                    text: 'Seguro que deseas eliminar  la persona',
+                    text: 'Seguro que deseas eliminar la persona',
                     icon: 'warning',
                     buttons: true,
                     dangerMode: true,
@@ -114,7 +112,7 @@ const app = new Vue({
                     } else {
                         swal({
                             title: 'Editar',
-                            text: 'La Persona no se pudo editar',
+                            text: 'La Persona no se pudo editar'+ this.respuesta,
                             icon: 'error',
                             buttons: true
                         })

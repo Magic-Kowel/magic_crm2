@@ -3,6 +3,7 @@
 <body>
  
     <?php include_once ('../includes/sesion.php') ?>
+    <?php include_once ('../includes/permisoAlto.php') ?>
     <?php include_once ('../includes/bara_busqueda.php')?>
     <main id="app" class="container">
         <div id="formulario" class="form-group container">
@@ -22,8 +23,8 @@
             <input type="search" v-model="buscar" placeholder="buscar" id="forLook-Text" required>
             <button type="button" id="button-search"><i class="fas fa-search"></i></button>
         </div>
-
-        <table class="table table-bordered">
+        <div class="table-responsive">
+        <table id="table" class="table table-hover table-bordered">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -47,9 +48,11 @@
                 </tr>
             </tbody>
         </table>
+        </div>
     </main>
     <?php include '../includes/librerias.php' ?>
     <script src="../js/appDepartamento.js"></script>
+    <script src="../js/validarNivelUsuario.js"></script>
 </body>
 
 </html>

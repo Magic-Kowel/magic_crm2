@@ -44,6 +44,7 @@ const app = new Vue({
                         console.log(data);
                         var player = [];
                         var score = [];
+                        var colores =  new Array();
                         var dynamicColors = function () {
                             var r = Math.floor(Math.random() * 255);
                             var g = Math.floor(Math.random() * 255);
@@ -55,13 +56,14 @@ const app = new Vue({
                             player.push(data[i].Respuesta_rsp);
                             score.push(data[i].conteo);
                             var coloR = dynamicColors();
+                            colores.push(coloR);
                         }
             
                         var chartdata = {
                             labels: player,
                             datasets: [{
                                 label: 'Resultados',
-                                backgroundColor:  dynamicColors(),
+                                backgroundColor: colores,
                                 borderColor: 'rgba(200, 200, 200, 0.75)',
                                 hoverBackgroundColor: 'rgba(120, 200, 200, 1)',
                                 hoverBorderColor: 'rgba(200, 200, 200, 1)',
@@ -72,7 +74,7 @@ const app = new Vue({
                         var ctx = $("#mycanvas");
             
                         var barGraph = new Chart(ctx, {
-                            type: 'bar',
+                            type: 'pie',
                             data: chartdata,
                             options: { // options es para añadir obciones
                                 scales: {

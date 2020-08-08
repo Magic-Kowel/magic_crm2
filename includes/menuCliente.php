@@ -5,3 +5,4 @@
     <li class='last'><a href='http://localhost/magic_crm2/contestarPreguntas/'><span>Contestar Encuestas</span></a></li>
     </ul>
 </div>
+<script src="../js/reaponsiMenu.js"></script>

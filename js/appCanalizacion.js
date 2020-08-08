@@ -34,7 +34,7 @@ const app = new Vue({
                     if (res.data == 'success') {
                         swal({
                             title: 'Guardado',
-                            text: 'Canalizacion Generado',
+                            text: 'Canalizacion Generada',
                             icon: 'success'
                         })
                         this.getDepartamentos();

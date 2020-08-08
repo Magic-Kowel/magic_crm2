@@ -20,7 +20,7 @@ if($estado==0){
     }
     $con->close();
 }else{
-    echo "Estado ya fue cambiado";
+    echo "Estado Actualizado";
 }
 //$up = $con->prepare("UPDATE `canalizacion` SET `Estado_ate`= ? WHERE Cod_ate = ? ");
 //$up->bind_param("ii",$id,$id);

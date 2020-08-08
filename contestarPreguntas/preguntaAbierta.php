@@ -24,6 +24,7 @@
     <?php include '../includes/librerias.php' ?>
 
     <script src="../js/appContestarPregunta.js"></script>
+    <script src="../js/validarNivelUsuario.js"></script>
 
 </body>
 
