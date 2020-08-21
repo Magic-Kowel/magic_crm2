@@ -1,5 +1,6 @@
 :root{
-  --bgcolor:#2FACB2;
+  /*--bgcolor:#2FACB2;*/
+  --bgcolor: #4464AE;
 }
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 #cssmenu,

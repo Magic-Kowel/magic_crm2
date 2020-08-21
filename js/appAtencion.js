@@ -24,7 +24,7 @@ const app = new Vue({
         getAtencion() {
             let uri = window.location.href.split('?');
 
-            axios.get('http://localhost/magic_crm2/api/atencion/getAtencionClientes.php')
+            axios.get('../api/atencion/getAtencionClientes.php')
                 .then(res => {
                     this.listar = res.data
                 })
@@ -40,7 +40,7 @@ const app = new Vue({
                 })
                 .then((aceptar) => {
                     if (aceptar) {
-                        axios.get('http://localhost/magic_crm2/api/atencion/actualizarEstado.php?id='+id+'&estado='+estado)
+                        axios.get('../api/atencion/actualizarEstado.php?id='+id+'&estado='+estado)
                             .then(res => {
                                 if (res.data == 'success') {
                                     swal('Estado Actualizado')

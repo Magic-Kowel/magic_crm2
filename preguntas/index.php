@@ -54,8 +54,12 @@
                     <td><a class="btn btn-warning " role="button" aria-pressed="true"
                             :href="'/magic_crm2/preguntas/editarPreguntas.php?id=' + item.Cod_preg"><i
                                 class="fas fa-edit"></i></a></td>
-                    <td ><center><a class="btn btn-info " data-toggle="tooltip" title="Resultados " role="button" aria-pressed="true"
+
+                    <td v-if="item.Tipo_preg==1"><center><a class="btn btn-info " data-toggle="tooltip" title="Resultados " role="button" aria-pressed="true"
                     :href="'/magic_crm2/resultadosCuestionarios/chart.php?id=' + item.Cod_preg"><i class="fas fa-chart-bar"></i></a></center></td>
+
+                    <td v-if="item.Tipo_preg==0"></td>
+
                     <td v-if="item.Tipo_preg==1"><center><a  class="btn btn-success " data-toggle="tooltip" title="Agregar Pregunta Abierta" role="button" aria-pressed="true"
                             :href="'/magic_crm2/opciones/index.php?idPregunta=' + item.Cod_preg"><i class="fas fa-plus-square"></i></a></center></td>
                     <td v-if="item.Tipo_preg==0"><center><a class="btn btn-secondary " data-toggle="tooltip" title="Agregar Pregunta Cerrada" role="button" aria-pressed="true"

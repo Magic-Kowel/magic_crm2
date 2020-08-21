@@ -21,7 +21,7 @@
             </div>
             <div class="form-group btn-lg col-md-6">
                 <label>Clave de Usuario</label>
-                <input type="text" class="form-control" name="claveUsiario" placeholder="Clave de Usuario" require>
+                <input type="text" class="form-control" name="claveUsiario" placeholder="Clave de Usuario" require pattern="[A-Za-z0-9]{8,15}">
             </div>
             <div class="form-group">
                 <button type="submit" class="btn  btn-lg col-md-6 btn-lg" data-toggle="tooltip" title="Agregar"
@@ -42,7 +42,6 @@
                 <tr>
                     <th>Nivel Permiso</th>
                     <th>Nombre Usuario</th>
-                    <th>Clave</th>
                     <th>Eliminar</th>
                     <th>Editar</th>
                 </tr>
@@ -51,7 +50,6 @@
                 <tr v-for="item in datosFiltrados">
                     <td>{{item.Nombre_perm}}</td>
                     <td> {{item.Nickname_usr}}</td>
-                    <td>{{item.Clave_usr}}</td>
                     <td><button class="btn btn-danger" @click="eliminar(item.Cod_usr)"><i
                                 class="fas fa-trash-alt"></i></button></td>
                     <td><a class="btn btn-warning " role="button" aria-pressed="true"

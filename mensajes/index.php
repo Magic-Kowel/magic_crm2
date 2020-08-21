@@ -26,7 +26,7 @@
             </div>
         </form>
         <div class="table-responsive">
-        <table id="table" class="  table table-responsive table-hover table-bordered ">
+        <table id="table" class="  table  table-hover table-bordered ">
             <thead>
                 <tr>
                     <th>Hilo</th>

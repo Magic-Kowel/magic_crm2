@@ -54,7 +54,7 @@ const app = new Vue({
         getInformacionPersona() {
             let uri = window.location.href.split('?');
 
-            axios.get('http://localhost/magic_crm2/api/informacionPersona/getInformacionPersona.php')
+            axios.get('../api/informacionPersona/getInformacionPersona.php')
                 .then(res => {
                     this.listar = res.data
                 })
@@ -63,7 +63,7 @@ const app = new Vue({
         getPuestos(id) {
             let uri = window.location.href.split('?');
 
-            axios.get('http://localhost/magic_crm2/api/informacionPersona/getPuestos.php?id=' + id)
+            axios.get('../api/informacionPersona/getPuestos.php?id=' + id)
                 .then(res => {
                     this.listarPuestos = res.data
                 })
@@ -72,7 +72,7 @@ const app = new Vue({
         getDatosPersona() {
             let uri = window.location.href.split('?');
 
-            axios.get('http://localhost/magic_crm2/api/informacionPersona/getDatosPersoa.php')
+            axios.get('../api/informacionPersona/getDatosPersoa.php')
                 .then(res => {
                     this.listarPersona = res.data
                 })
@@ -81,7 +81,7 @@ const app = new Vue({
         getUsuarios() {
             let uri = window.location.href.split('?');
 
-            axios.get('http://localhost/magic_crm2/api/informacionPersona/getUsuarios.php')
+            axios.get('../api/informacionPersona/getUsuarios.php')
                 .then(res => {
                     this.listarUsuarios = res.data
                 })
@@ -97,7 +97,7 @@ const app = new Vue({
                 })
                 .then((aceptar) => {
                     if (aceptar) {
-                        axios.get('http://localhost/magic_crm2/api/informacionPersona/eliminarInformacionPersona.php?id=' + id)
+                        axios.get('../api/informacionPersona/eliminarInformacionPersona.php?id=' + id)
                             .then(res => {
                                 if (res.data == 'success') {
                                     swal('Personal eliminado')
@@ -150,7 +150,7 @@ const app = new Vue({
                 });
                 this.itemId = getVars
                 console.log(this.itemId.id)
-                axios.get('http://localhost/magic_crm2/api/informacionPersona/getId.php?id=' + this.itemId.id)
+                axios.get('../api/informacionPersona/getId.php?id=' + this.itemId.id)
                     .then(res => {
                         this.formEditar = res.data
                     })

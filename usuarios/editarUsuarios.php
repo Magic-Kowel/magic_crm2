@@ -21,8 +21,8 @@
             </div>
             <div class="form-group mx-sm-3">
                 <label for="inputPass" class="col-sm-2 col-form-label col-form-label-lg container">Clave Usuario</label>
-                <input :value="formEditar.Clave_usr" type="text" placeholder="Clave Usuari"
-                    name="claveUsuario" id="textbox-descripcion" class="form-control container" rows="3" require>
+                <input type="text" placeholder="Clave Usuari"
+                    name="claveUsuario" id="textbox-descripcion" class="form-control container" rows="3" require pattern="[A-Za-z0-9]{8,15}">
             </div>
             <input type="hidden" name="id" :value="formEditar.Cod_usr">
             <button type="submit" class="btn btn-warning container" data-toggle="tooltip" title="Editar"><i

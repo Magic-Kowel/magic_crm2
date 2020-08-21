@@ -49,7 +49,7 @@ const app = new Vue({
         getPermisos() {
             let uri = window.location.href.split('?');
 
-            axios.get('http://localhost/magic_crm2/api/usuarios/getPermisos.php')
+            axios.get('../api/usuarios/getPermisos.php')
                 .then(res => {
                     this.listarPermisos = res.data
                 })
@@ -58,7 +58,7 @@ const app = new Vue({
         getUsuarios() {
             let uri = window.location.href.split('?');
 
-            axios.get('http://localhost/magic_crm2/api/usuarios/getUsuarios.php')
+            axios.get('../api/usuarios/getUsuarios.php')
                 .then(res => {
                     this.listar = res.data
                 })
@@ -74,7 +74,7 @@ const app = new Vue({
                 })
                 .then((aceptar) => {
                     if (aceptar) {
-                        axios.get('http://localhost/magic_crm2/api/usuarios/eliminarUsuarios.php?id=' + id)
+                        axios.get('../api/usuarios/eliminarUsuarios.php?id=' + id)
                             .then(res => {
                                 if (res.data == 'success') {
                                     swal('Usuario eliminado')
@@ -102,7 +102,7 @@ const app = new Vue({
                 });
                 this.itemId = getVars
                 console.log(this.itemId.id)
-                axios.get('http://localhost/magic_crm2/api/usuarios/getId.php?id=' + this.itemId.id)
+                axios.get('../api/usuarios/getId.php?id=' + this.itemId.id)
                     .then(res => {
                         this.formEditar = res.data
                     })

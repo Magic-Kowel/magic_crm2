@@ -57,7 +57,7 @@ const app = new Vue({
         getPermisos() {
             let uri = window.location.href.split('?');
 
-            axios.get('http://localhost/magic_crm2/api/permisos/getPermisos.php')
+            axios.get('../api/permisos/getPermisos.php')
                 .then(res => {
                     this.listar = res.data
                 })
@@ -73,7 +73,7 @@ const app = new Vue({
                 })
                 .then((aceptar) => {
                     if (aceptar) {
-                        axios.get('http://localhost/magic_crm2/api/permisos/eliminarPermisos.php?id=' + id)
+                        axios.get('../api/permisos/eliminarPermisos.php?id=' + id)
                             .then(res => {
                                 if (res.data == 'success') {
                                     swal({
@@ -136,7 +136,7 @@ const app = new Vue({
                 });
                 this.itemId = getVars
                 console.log(this.itemId.id)
-                axios.get('http://localhost/magic_crm2/api/permisos/getId.php?id=' + this.itemId.id)
+                axios.get('../api/permisos/getId.php?id=' + this.itemId.id)
                     .then(res => {
                         this.formEditar = res.data
                     })

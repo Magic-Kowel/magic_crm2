@@ -1,8 +1,10 @@
 :root{
     --width:300px;
     --padding: 10px;
-    --bgcolor:#2FACB2;
-    --hovercolor: rgb(148, 250, 255);
+    /*--bgcolor:#2FACB2;*/
+    /*--hovercolor: rgb(148, 250, 255);*/
+    --bgcolor:#4464AE;
+    --hovercolor: #4464AE;
     --width-collapsed: 50px;
 }
 body{

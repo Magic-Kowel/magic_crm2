@@ -12,7 +12,7 @@ const menu = new Vue({
     },
     methods: {
 		validarNivelUsuario() {
-            axios.get('http://localhost/magic_crm2/api/loginRegistro/validarNivelUsuario.php')
+            axios.get('../api/loginRegistro/validarNivelUsuario.php')
                 .then(res => {
 					this.listar = res.data
 					this.nivel=this.listar.Cod_fk_perm

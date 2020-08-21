@@ -42,7 +42,7 @@ const app = new Vue({
         },getReporte() {
             let uri = window.location.href.split('?');
 
-            axios.get('http://localhost/magic_crm2/api/reporte/getReporte.php')
+            axios.get('../api/reporte/getReporte.php')
                 .then(res => {
                     this.listar = res.data
                 })

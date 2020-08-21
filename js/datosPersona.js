@@ -43,7 +43,7 @@ const app = new Vue({
                 })
         },
         getDatosPersoa() {
-            axios.get('http://localhost/magic_crm2/api/datosPersona/getDatosPersoa.php')
+            axios.get('../api/datosPersona/getDatosPersoa.php')
                 .then(res => {
                     this.listar= res.data
                 })
@@ -59,7 +59,7 @@ const app = new Vue({
                 })
                 .then((aceptar) => {
                     if (aceptar) {
-                        axios.get('http://localhost/magic_crm2/api/datosPersona/eliminarPersona.php?id=' + id)
+                        axios.get('../api/datosPersona/eliminarPersona.php?id=' + id)
                             .then(res => {
                                 if (res.data == 'success') {
                                     swal('Persona eliminado')
@@ -87,7 +87,7 @@ const app = new Vue({
                 });
                 this.itemId = getVars
                 console.log(this.itemId.id)
-                axios.get('http://localhost/magic_crm2/api/datosPersona/getId.php?id=' + this.itemId.id)
+                axios.get('../api/datosPersona/getId.php?id=' + this.itemId.id)
                     .then(res => {
                         this.formEditar = res.data
                     })

@@ -46,7 +46,7 @@ const app = new Vue({
         getCuestionario() {
             let uri = window.location.href.split('?');
 
-            axios.get('http://localhost/magic_crm2/api/cuestionario/getCuestionario.php')
+            axios.get('../api/cuestionario/getCuestionario.php')
                 .then(res => {
                     this.listar = res.data
                 })
@@ -62,7 +62,7 @@ const app = new Vue({
                 })
                 .then((aceptar) => {
                     if (aceptar) {
-                        axios.get('http://localhost/magic_crm2/api/cuestionario/eliminarCuestionario.php?id=' + id)
+                        axios.get('../api/cuestionario/eliminarCuestionario.php?id=' + id)
                             .then(res => {
                                 if (res.data == 'success') {
                                     swal({
@@ -124,7 +124,7 @@ const app = new Vue({
                 });
                 this.itemId = getVars
                 console.log(this.itemId.id)
-                axios.get('http://localhost/magic_crm2/api/cuestionario/getId.php?id=' + this.itemId.id)
+                axios.get('../api/cuestionario/getId.php?id=' + this.itemId.id)
                     .then(res => {
                         this.formEditar = res.data
                     })

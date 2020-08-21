@@ -1,5 +1,5 @@
 const app = new Vue({
-    el:'#app',
+    el:'#header',
     data:{
         pass:'',
         passC:'',
@@ -9,18 +9,6 @@ const app = new Vue({
         menu:false
     },
     methods:{
-        registro(){
-            if (this.pass == this.passC) {
-                const form = document.getElementById('formRegistro')
-                axios.post('../api/loginRegistro/registro.php', new FormData(form))
-                .then( res =>{
-                    this.respuesta = res.data
-                    this.direccionamiento()
-                })
-            } else {
-                swal('Las contraseñas no coinciden')
-            }
-        },
         direccionamiento(){
             if (this.respuesta == 'success') {
                 location.href = 'index.php'
@@ -64,4 +52,54 @@ const app = new Vue({
         }
 
     }
+})
+const main = new Vue({
+    el:'#app',
+    data:{
+        respuesta:''
+    },
+    methods:{
+        cuestionarioHome(){
+            const form = document.getElementById('cuestionarioHome') 
+            axios.post('../api/contestarPreguntas/cuestionarioHome.php', new FormData(form))
+            .then( res =>{
+                this.respuesta = res.data
+                if (res.data == 'success') {
+                    swal({
+                        title: 'Guardado',
+                        text: 'Cuestionario',
+                        icon: 'success'
+                    })
+                } else {
+                    swal({
+                        title: 'Error',
+                        text: this.respuesta,
+                        icon: 'error'
+                    })
+                }
+            })
+            
+    },
+    cuestionarioHome2(){
+        const form = document.getElementById('cuestionarioHome2') ||document.getElementById('cuestionarioHome2')
+        axios.post('../api/contestarPreguntas/cuestionarioHome.php', new FormData(form))
+        .then( res =>{
+            this.respuesta = res.data
+            if (res.data == 'success') {
+                swal({
+                    title: 'Guardado',
+                    text: 'Cuestionario',
+                    icon: 'success'
+                })
+            } else {
+                swal({
+                    title: 'Error',
+                    text: this.respuesta,
+                    icon: 'error'
+                })
+            }
+        })
+        
+}
+}
 })

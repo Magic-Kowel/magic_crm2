@@ -58,7 +58,7 @@ const app = new Vue({
         getCategoria() {
             let uri = window.location.href.split('?');
 
-            axios.get('http://localhost/magic_crm2/api/departamento/getDepartamentos.php')
+            axios.get('../api/departamento/getDepartamentos.php')
                 .then(res => {
                     this.listar = res.data
                 })
@@ -74,7 +74,7 @@ const app = new Vue({
                 })
                 .then((aceptar) => {
                     if (aceptar) {
-                        axios.get('http://localhost/magic_crm2/api/departamento/eliminarDepartamento.php?id=' + id)
+                        axios.get('../api/departamento/eliminarDepartamento.php?id=' + id)
                             .then(res => {
                                 if (res.data == 'success') {
                                     swal({
@@ -137,7 +137,7 @@ const app = new Vue({
                 });
                 this.itemId = getVars
                 console.log(this.itemId.id)
-                axios.get('http://localhost/magic_crm2/api/departamento/getId.php?id=' + this.itemId.id)
+                axios.get('../api/departamento/getId.php?id=' + this.itemId.id)
                     .then(res => {
                         this.formEditar = res.data
                     })

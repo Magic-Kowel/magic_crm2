@@ -67,7 +67,7 @@ const app = new Vue({
         getPreguntas(id) {
             let uri = window.location.href.split('?');
 
-            axios.get('http://localhost/magic_crm2/api/preguntas/getPreguntas.php?id='+id)
+            axios.get('../api/preguntas/getPreguntas.php?id='+id)
                 .then(res => {
                     this.listar = res.data
                 })
@@ -83,7 +83,7 @@ const app = new Vue({
                 })
                 .then((aceptar) => {
                     if (aceptar) {
-                        axios.get('http://localhost/magic_crm2/api/preguntas/eliminarPreguntas.php?id=' + id)
+                        axios.get('../api/preguntas/eliminarPreguntas.php?id=' + id)
                             .then(res => {
                                 if (res.data == 'success') {
                                     swal({
@@ -145,7 +145,7 @@ const app = new Vue({
                 });
                 this.itemId = getVars
                 console.log(this.itemId.id)
-                axios.get('http://localhost/magic_crm2/api/preguntas/getId.php?id=' + this.itemId.id)
+                axios.get('../api/preguntas/getId.php?id=' + this.itemId.id)
                     .then(res => {
                         this.formEditar = res.data
                     })
@@ -165,11 +165,11 @@ const app = new Vue({
                 });
                 this.itemId = getVars
                 console.log(this.itemId.id)
-                axios.get('http://localhost/magic_crm2/api/preguntas/getPreguntas.php?id=' + this.itemId.id)
+                axios.get('../api/preguntas/getPreguntas.php?id=' + this.itemId.id)
                     .then(res => {
                         this.formCuestionario  = res.data
                     })
-                axios.get('http://localhost/magic_crm2/api/preguntas/getIdentificadorPregunta.php?id=' + this.itemId.id)
+                axios.get('../api/preguntas/getIdentificadorPregunta.php?id=' + this.itemId.id)
                     .then(res => {
                         this.identificadorPregunta  = res.data
                         

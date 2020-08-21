@@ -29,7 +29,7 @@ const app = new Vue({
     },
     methods: {
         contestarPreguntaAbierta(cuestionario,pregrunta,respuestaAbierta) {
-            axios.get('http://localhost/magic_crm2/api/contestarPreguntas/addRespuesta.php?cuestionario='+cuestionario+'&pregrunta='+pregrunta+'&respuestaAbierta='+this.respuestaAbierta)
+            axios.get('../api/contestarPreguntas/addRespuesta.php?cuestionario='+cuestionario+'&pregrunta='+pregrunta+'&respuestaAbierta='+this.respuestaAbierta)
                     .then(res => {
                         if (res.data == 'success') {
                             swal({
@@ -50,7 +50,7 @@ const app = new Vue({
 
         },
         contestarPregunta(cuestionario,pregrunta,opcion) {
-            axios.get('http://localhost/magic_crm2/api/contestarPreguntas/contestar.php?cuestionario='+cuestionario+'&pregrunta='+pregrunta+'&opcion='+opcion)
+            axios.get('../api/contestarPreguntas/contestar.php?cuestionario='+cuestionario+'&pregrunta='+pregrunta+'&opcion='+opcion)
                     .then(res => {
                         if (res.data == 'success') {
                             swal({
@@ -72,21 +72,21 @@ const app = new Vue({
         },
         getCuestionario() {
             let uri = window.location.href.split('?');
-            axios.get('http://localhost/magic_crm2/api/cuestionario/getCuestionario.php')
+            axios.get('../api/cuestionario/getCuestionario.php')
                 .then(res => {
                     this.listarCuestionarios = res.data
                 })
         },
         getPregruntas(){
                 let uri = window.location.href.split('?');
-                axios.get('http://localhost/magic_crm2/api/preguntas/getPreguntas.php?id='+idCuestionario)
+                axios.get('../api/preguntas/getPreguntas.php?id='+idCuestionario)
                     .then(res => {
                         this.listarPreguntas = res.data
                     })
         },
         getOpciones(){
             let uri = window.location.href.split('?');
-            axios.get('http://localhost/magic_crm2/api/opciones/getObciones.php?id='+idPregunta)
+            axios.get('../api/opciones/getObciones.php?id='+idPregunta)
                 .then(res => {
                     this.listarOpciones = res.data
                 })

@@ -9,9 +9,9 @@
                 <span id="button-search" class="input-group-text"><i class="fas fa-search"></i></span>
             </div>
         </div>
+        <div class="card-deck">
         <template v-for="item in datosFiltrados">
-        <div  style=" Display: inline-block  !important; ">
-            <div class="card-header " style="width: 25rem; ">
+            <div class="card-header container" style="width: 20rem; ">
                 <img class="card-img-top" src="../img/magic CRM.svg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">
@@ -27,6 +27,7 @@
             </div>
         </div>
         </template>
+        </div>
     </main>
     <?php include '../includes/librerias.php' ?>
     <script src="../js/appContestarPregunta.js"></script>

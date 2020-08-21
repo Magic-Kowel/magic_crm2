@@ -26,11 +26,11 @@ const app = new Vue({
     methods: {
         getOpciones(id) {
             let uri = window.location.href.split('?');
-            axios.get('http://localhost/magic_crm2/api/opciones/getObciones.php?id='+ id)
+            axios.get('../api/opciones/getObciones.php?id='+ id)
                 .then(res => {
                     this.listar = res.data
                 })
-            axios.get('http://localhost/magic_crm2/api/opciones/getTituloPregunta.php?id='+ id)
+            axios.get('../api/opciones/getTituloPregunta.php?id='+ id)
             .then(res => {
                 this.titulo = res.data
             })
@@ -72,7 +72,7 @@ const app = new Vue({
                 });
                 this.itemId = getVars
                 console.log(this.itemId.id)
-                axios.get('http://localhost/magic_crm2/api/opciones/getId.php?id=' + this.itemId.id)
+                axios.get('../api/opciones/getId.php?id=' + this.itemId.id)
                     .then(res => {
                         this.formEditar = res.data
                     })
@@ -108,7 +108,7 @@ const app = new Vue({
                 })
                 .then((aceptar) => {
                     if (aceptar) {
-                        axios.get('http://localhost/magic_crm2/api/opciones/eliminarOpcion.php?id=' + id)
+                        axios.get('../api/opciones/eliminarOpcion.php?id=' + id)
                             .then(res => {
                                 if (res.data == 'success') {
                                     swal({

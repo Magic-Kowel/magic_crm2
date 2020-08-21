@@ -38,7 +38,7 @@ const app = new Vue({
             var id= this.idPregunta;
             $(document).ready(function () {
                 $.ajax({
-                    url: "http://localhost/magic_crm2/api/resultadosCuestionarios/getResultadosEncuestas.php?idPregunta="+ id,
+                    url: "../api/resultadosCuestionarios/getResultadosEncuestas.php?idPregunta="+ id,
                     method: "GET",
                     success: function (data) {
                         console.log(data);
@@ -67,7 +67,7 @@ const app = new Vue({
                                 borderColor: 'rgba(200, 200, 200, 0.75)',
                                 hoverBackgroundColor: 'rgba(120, 200, 200, 1)',
                                 hoverBorderColor: 'rgba(200, 200, 200, 1)',
-                                data: score,
+                                data: score ,
                             }]
                         };
             
@@ -77,6 +77,7 @@ const app = new Vue({
                             type: 'pie',
                             data: chartdata,
                             options: { // options es para añadir obciones
+                                responsive: true,
                                 scales: {
                                     yAxes: [{
                                         ticks: {
@@ -84,6 +85,10 @@ const app = new Vue({
                                         }
                                     }]
                                 }
+                            },
+                            animation: {
+                                animateScale: true,
+                                animateRotate: true
                             }
                         });
                     },
@@ -96,7 +101,7 @@ const app = new Vue({
         getRespuestasAbiertas(id) {
             let uri = window.location.href.split('?');
 
-            axios.get('http://localhost/magic_crm2/api/resultadosCuestionarios/getResultadosPreguntasAbiertas.php?id='+ id )
+            axios.get('../api/resultadosCuestionarios/getResultadosPreguntasAbiertas.php?id='+ id )
                 .then(res => {
                     this.listar = res.data
                 })

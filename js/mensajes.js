@@ -55,7 +55,7 @@ const app = new Vue({
                 });
                 this.itemId = getVars
                 console.log(this.itemId.id)
-                axios.get('http://localhost/magic_crm2/api/mensajes/getId.php?id=' + this.itemId.id)
+                axios.get('../api/mensajes/getId.php?id=' + this.itemId.id)
                     .then(res => {
                         this.formEditar = res.data
                     })
@@ -64,7 +64,7 @@ const app = new Vue({
         },
         getHiloConversasion() {
             let uri = window.location.href.split('?');
-                axios.get('http://localhost/magic_crm2/api/mensajes/getHiloConversasion.php?id='+this.itemId.id)
+                axios.get('../api/mensajes/getHiloConversasion.php?id='+this.itemId.id)
                     .then(res => {
                         this.listar = res.data
                     })

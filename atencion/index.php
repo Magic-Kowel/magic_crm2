@@ -27,7 +27,7 @@
             </thead>
             <tbody>
                 <tr v-for="item in datosFiltrados">
-                    <td v-if="item.Estado_Ate ==1"><button @click="actualizarEstado(item.Cod_ate , item.Estado_ate)" class="btn btn-success"> <i class="fas fa-toggle-on"></i></button></td>
+                    <td v-if="item.Estado_Ate ==1"><button  class="btn btn-success"> <i class="fas fa-toggle-on"></i></button></td>
                     <td v-if="item.Estado_Ate ==0"><button @click="actualizarEstado(item.Cod_ate , item.Estado_ate)" class="btn btn-danger"><i class="fas fa-toggle-off"></i></button></td>
                     <td> {{item.Tiempo_ate}}</td>
                     <td>{{item.Detalle_repo}}</td>

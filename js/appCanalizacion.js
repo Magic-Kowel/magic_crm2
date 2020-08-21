@@ -54,7 +54,7 @@ const app = new Vue({
         getDepartamentos() {
             let uri = window.location.href.split('?');
 
-            axios.get('http://localhost/magic_crm2/api/puestos/getDepartamento.php')
+            axios.get('../api/puestos/getDepartamento.php')
                 .then(res => {
                     this.listarDepartamentos = res.data
                 })
@@ -75,7 +75,7 @@ const app = new Vue({
                 });
                 this.itemIdCanalizacion = getVars
                 console.log(this.itemIdCanalizacion.canalizacion)
-                axios.get('http://localhost/magic_crm2/api/canalizacion/getCanalizacion.php?id=' + this.itemIdCanalizacion.canalizacion)
+                axios.get('../api/canalizacion/getCanalizacion.php?id=' + this.itemIdCanalizacion.canalizacion)
                     .then(res => {
                         this.listar = res.data
                     })

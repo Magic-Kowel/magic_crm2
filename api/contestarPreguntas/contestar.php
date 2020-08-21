@@ -12,5 +12,5 @@ if ($result) {
 } else {
     echo  $query ;
 }
-
+$con->close();
 ?>

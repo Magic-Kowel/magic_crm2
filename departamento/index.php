@@ -19,8 +19,8 @@
                 </div>
             </form>
         </div>
-        <div class="forLook">
-            <input type="search" v-model="buscar" placeholder="buscar" id="forLook-Text" required>
+        <div class="input-group mb-3">
+            <input type="search" class="form-control" v-model="buscar" placeholder="buscar" id="forLook-Text" required>
             <button type="button" id="button-search"><i class="fas fa-search"></i></button>
         </div>
         <div class="table-responsive">
